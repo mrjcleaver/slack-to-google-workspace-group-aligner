@@ -1,0 +1,25 @@
+# Google Workspace -> Slack Sync Configuration
+
+settings:
+  notify_channel_id: "C01234567"  # ID of the #rccr-ops channel for reports
+  dry_run: true                   # Set to false to enable actual writes
+  max_changes_per_run: 50         # Safety cap: abort mapping if changes exceed this
+  log_level: "INFO"
+
+mappings:
+  - name: "Senior Mentors"
+    google_group: "senior-mentors@ourdomain.ca"
+    slack_channel: "C11111111"
+    protected_slack_users: ["U01234567"] # IDs that should never be kicked
+    enabled: true
+
+  - name: "2609 Students"
+    google_group: "students@ourdomain.ca"
+    slack_channel: "C22222222"
+    protected_slack_users: []
+    enabled: true
+
+  - name: "11227 Mentors"
+    google_group: "mentors@11227.ourdomain.ca"
+    slack_channel: "C33333333"
+    enabled: false
